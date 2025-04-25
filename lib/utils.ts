@@ -136,7 +136,7 @@ export function countTransactionCategories(
   let totalCount = 0;
 
   // Iterate over each transaction
-  transactions &&
+ if (transactions) {
     transactions.forEach((transaction) => {
       // Extract the category from the transaction
       const category = transaction.category;
@@ -152,6 +152,7 @@ export function countTransactionCategories(
       // Increment total count
       totalCount++;
     });
+  }
 
   // Convert the categoryCounts object to an array of objects
   const aggregatedCategories: CategoryCount[] = Object.keys(categoryCounts).map(

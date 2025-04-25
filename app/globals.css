@@ -1,109 +1,210 @@
+@import "tailwindcss";
+@reference "tailwindcss";
+
+@theme {
+  /* ============ CONTAINER ============ */
+
+  --container-padding: 2rem;
+  --container-max-width: 1400px;
+
+  /* ============ COLORS ============ */
+
+  /* Fill */
+  --color-fill-1: rgba(255, 255, 255, 0.1);
+
+  /* Bank Gradient */
+  --color-bankGradient: #0179fe;
+
+  /* Indigo */
+  --color-indigo-500: #6172f3;
+  --color-indigo-700: #3538cd;
+
+  /* Success */
+  --color-success-25: #f6fef9;
+  --color-success-50: #ecfdf3;
+  --color-success-100: #d1fadf;
+  --color-success-600: #039855;
+  --color-success-700: #027a48;
+  --color-success-900: #054f31;
+
+  /* Pink */
+  --color-pink-25: #fef6fb;
+  --color-pink-100: #fce7f6;
+  --color-pink-500: #ee46bc;
+  --color-pink-600: #dd2590;
+  --color-pink-700: #c11574;
+  --color-pink-900: #851651;
+
+  /* Blue */
+  --color-blue-25: #f5faff;
+  --color-blue-100: #d1e9ff;
+  --color-blue-500: #2e90fa;
+  --color-blue-600: #1570ef;
+  --color-blue-700: #175cd3;
+  --color-blue-900: #194185;
+
+  /* Sky */
+  --color-sky-1: #f3f9ff;
+
+  /* Black */
+  --color-black-1: #00214f;
+  --color-black-2: #344054;
+
+  /* Gray */
+  --color-gray-25: #fcfcfd;
+  --color-gray-200: #eaecf0;
+  --color-gray-300: #d0d5dd;
+  --color-gray-500: #667085;
+  --color-gray-600: #475467;
+  --color-gray-700: #344054;
+  --color-gray-900: #101828;
+
+  /* ============ BACKGROUND IMAGES ============ */
+
+  --background-image-bank-gradient: linear-gradient(
+    90deg,
+    #0179fe 0%,
+    #4893ff 100%
+  );
+  --background-image-gradient-mesh: url("/icons/gradient-mesh.svg");
+  --background-image-bank-green-gradient: linear-gradient(
+    90deg,
+    #01797a 0%,
+    #489399 100%
+  );
+
+  /* ============ BOX SHADOWS ============ */
+
+  --shadow-form: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  --shadow-chart: 0px 1px 3px 0px rgba(16, 24, 40, 0.1),
+    0px 1px 2px 0px rgba(16, 24, 40, 0.06);
+  --shadow-profile: 0px 12px 16px -4px rgba(16, 24, 40, 0.08),
+    0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+  --shadow-creditCard: 8px 10px 16px 0px rgba(0, 0, 0, 0.05);
+
+  /* ============ FONT FAMILIES ============ */
+
+  --font-family-inter: var(--font-inter);
+}
+@layer base {
+  :root {
+    --font-ibm-plex-serif: "IBM Plex Serif", serif; /* Variável CSS */
+  }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ============ KEYFRAMES ============ */
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-.no-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-.glassmorphism {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+/* ============ UTILITIES ============ */
+/* Scrollbar Utilities */
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.custom-scrollbar::-webkit-scrollbar {
-  width: 3px;
-  height: 3px;
-  border-radius: 2px;
+@utility no-scrollbar-webkit {
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: #dddddd;
+@utility input-class {
+  @apply text16 placeholder:text16 rounded-lg border border-gray-300 text-gray-900 placeholder:text-gray-500;
 }
 
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #5c5c7b;
-  border-radius: 50px;
+@utility sheetContent {
+  button {
+    @apply focus:ring-0 focus-visible:ring-transparent focus:ring-offset-0 focus-visible:ring-offset-0 focus-visible:outline-none focus-visible:!border-none;
+  }
 }
 
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #7878a3;
+@utility text14Padding10 {
+  @reference text14;
+  @apply px-4 py-2.5 font-semibold;
 }
 
-@layer utilities {
-  .input-class {
-    @apply text-16 placeholder:text-16 rounded-lg border border-gray-300 text-gray-900 placeholder:text-gray-500;
-  }
+@utility flexCenter {
+  @apply flex items-center justify-center;
+}
 
-  .sheet-content button {
-    @apply focus:ring-0 focus-visible:ring-transparent focus:ring-offset-0 focus-visible:ring-offset-0 focus-visible:outline-none focus-visible:border-none !important;
-  }
+@utility header2 {
+  @apply text18 font-semibold text-gray-900;
+}
+@utility text10 {
+  @apply text-[10px] leading-[14px];
+}
 
-  .text14_padding10 {
-    @apply text-14 px-4 py-2.5 font-semibold;
-  }
+@utility text12 {
+  @apply text-[12px] leading-[16px];
+}
 
-  .flex-center {
-    @apply flex items-center justify-center;
-  }
+@utility text14 {
+  @apply text-[14px] leading-[20px];
+}
 
-  .header-2 {
-    @apply text-18 font-semibold text-gray-900;
-  }
+@utility text16 {
+  @apply text-[16px] leading-[24px];
+}
 
-  .text-10 {
-    @apply text-[10px] leading-[14px];
-  }
+@utility text18 {
+  @apply text-[18px] leading-[22px];
+}
 
-  .text-12 {
-    @apply text-[12px] leading-[16px];
-  }
+@utility text20 {
+  @apply text-[20px] leading-[24px];
+}
 
-  .text-14 {
-    @apply text-[14px] leading-[20px];
-  }
+@utility text24 {
+  @apply text-[24px] leading-[30px];
+}
 
-  .text-16 {
-    @apply text-[16px] leading-[24px];
-  }
+@utility text26 {
+  @apply text-[26px] leading-[32px];
+}
 
-  .text-18 {
-    @apply text-[18px] leading-[22px];
-  }
+@utility text30 {
+  @apply text-[30px] leading-[38px];
+}
 
-  .text-20 {
-    @apply text-[20px] leading-[24px];
+@utility text36 {
+  @apply text-[36px] leading-[44px];
+}
+@utility customScrollbar {
+  ::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+    border-radius: 2px;
   }
-
-  .text-24 {
-    @apply text-[24px] leading-[30px];
+  ::-webkit-scrollbar-thumb {
+    background: #5c5c7b;
+    border-radius: 50px;
   }
-
-  .text-26 {
-    @apply text-[26px] leading-[32px];
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7878a3;
   }
+}
 
-  .text-30 {
-    @apply text-[30px] leading-[38px];
-  }
-
-  .text-36 {
-    @apply text-[36px] leading-[44px];
-  }
-
+@layer components {
   /* Home */
   .home {
     @apply no-scrollbar flex w-full flex-row max-xl:max-h-screen max-xl:overflow-y-scroll;
@@ -114,7 +215,7 @@
   }
 
   .home-header {
-    @apply flex flex-col justify-between gap-8;
+    @apply flex flex-col justify-between gap-[10vw];
   }
 
   .total-balance {
@@ -126,11 +227,11 @@
   }
 
   .total-balance-label {
-    @apply text-14 font-medium text-gray-600;
+    @apply text14 font-medium text-gray-600;
   }
 
   .total-balance-amount {
-    @apply text-24 lg:text-30 flex-1 font-semibold text-gray-900;
+    @apply text24 lg:text30 flex-1 font-semibold text-gray-900;
   }
 
   .recent-transactions {
@@ -138,7 +239,7 @@
   }
 
   .view-all-btn {
-    @apply text-14 rounded-lg border border-gray-300 px-4 py-2.5 font-semibold text-gray-700;
+    @apply text14 rounded-lg border border-gray-300 px-4 py-2.5 font-semibold text-gray-700;
   }
 
   .recent-transactions {
@@ -146,16 +247,16 @@
   }
 
   .recent-transactions-label {
-    @apply text-20 md:text-24 font-semibold text-gray-900;
+    @apply text20 md:text24 font-semibold text-gray-900;
   }
 
   .recent-transactions-tablist {
-    @apply custom-scrollbar mb-8 flex w-full flex-nowrap;
+    @apply customScrollbar mb-8 flex w-full flex-nowrap;
   }
 
   /* Right sidebar */
   .right-sidebar {
-    @apply no-scrollbar hidden h-screen max-h-screen flex-col border-l border-gray-200 xl:flex w-[355px] xl:overflow-y-scroll !important;
+    @apply no-scrollbar hidden h-screen max-h-screen flex-col border-l border-gray-200 xl:flex w-[355px] xl:!overflow-y-scroll;
   }
 
   .profile-banner {
@@ -167,7 +268,7 @@
   }
 
   .profile-img {
-    @apply flex-center absolute -top-8 size-24 rounded-full bg-gray-100 border-8 border-white p-2 shadow-profile;
+    @apply flexCenter absolute -top-8 size-24 rounded-full bg-gray-100 border-8 border-white p-2 shadow-profile;
   }
 
   .profile-details {
@@ -175,11 +276,11 @@
   }
 
   .profile-name {
-    @apply text-24 font-semibold text-gray-900;
+    @apply text24 font-semibold text-gray-900;
   }
 
   .profile-email {
-    @apply text-16 font-normal text-gray-600;
+    @apply text16 font-normal text-gray-600;
   }
 
   .banks {
@@ -205,7 +306,7 @@
   }
 
   .transactions-account-balance {
-    @apply flex-center flex-col  gap-2 rounded-md bg-blue-25/20 px-4 py-2 text-white;
+    @apply flexCenter flex-col  gap-2 rounded-md bg-blue-25/20 px-4 py-2 text-white;
   }
 
   .header-box {
@@ -213,11 +314,11 @@
   }
 
   .header-box-title {
-    @apply text-24 lg:text-30 font-semibold text-gray-900;
+    @apply text24 lg:text30 font-semibold text-gray-900;
   }
 
   .header-box-subtext {
-    @apply text-14 lg:text-16 font-normal text-gray-600;
+    @apply text14 lg:text16 font-normal text-gray-600;
   }
 
   /* Bank Card */
@@ -240,7 +341,7 @@
 
   /* Category Badge */
   .category-badge {
-    @apply flex-center truncate w-fit gap-1 rounded-2xl border-[1.5px] py-[2px] pl-1.5 pr-2;
+    @apply flexCenter truncate w-fit gap-1 rounded-2xl border-[1.5px] py-[2px] pl-1.5 pr-2;
   }
 
   .banktab-item {
@@ -258,7 +359,7 @@
 
   /* PlaidLink */
   .plaidlink-primary {
-    @apply text-16 rounded-lg border border-bankGradient bg-bank-gradient font-semibold text-white shadow-form;
+    @apply text16 rounded-lg border border-bankGradient bg-bank-gradient font-semibold text-white shadow-form;
   }
 
   .plaidlink-ghost {
@@ -284,19 +385,19 @@
   }
 
   .form-label {
-    @apply text-14 w-full max-w-[280px] font-medium text-gray-700;
+    @apply text14 w-full max-w-[280px] font-medium text-gray-700;
   }
 
   .form-message {
-    @apply text-12 text-red-500;
+    @apply text12 text-red-500;
   }
 
   .form-btn {
-    @apply text-16 rounded-lg border border-bankGradient bg-bank-gradient font-semibold text-white shadow-form;
+    @apply text16 rounded-lg border border-bankGradient bg-bank-gradient font-semibold text-white shadow-form;
   }
 
   .form-link {
-    @apply text-14 cursor-pointer font-medium text-bankGradient;
+    @apply text14 cursor-pointer font-medium text-bankGradient;
   }
 
   /* Payment Transfer */
@@ -321,7 +422,7 @@
   }
 
   .payment-transfer_btn {
-    @apply text-14 w-full bg-bank-gradient font-semibold text-white shadow-form !important;
+    @apply text14 w-full bg-bank-gradient font-semibold text-white !shadow-form;
   }
 
   /* Root Layout */
@@ -369,7 +470,7 @@
   }
 
   .sidebar-logo {
-    @apply 2xl:text-26 font-ibm-plex-serif text-[26px] font-bold text-black-1 max-xl:hidden;
+    @apply 2xl:text26 font-[var(--font-ibm-plex-serif)] text-[26px] font-bold text-black-1 max-xl:hidden;
   }
 
   .sidebar-link {
@@ -377,6 +478,27 @@
   }
 
   .sidebar-label {
-    @apply text-16 font-semibold text-black-2 max-xl:hidden;
+    @apply text16 font-semibold text-black-2 max-xl:hidden;
   }
+
+  /* Animations */
+  .animate-accordion-down {
+    animation: accordion-down 0.2s ease-out;
+  }
+  .animate-accordion-up {
+    animation: accordion-up 0.2s ease-out;
+  }
+}
+/* ============ GLOBAL STYLES ============ */
+* {
+  @reference "tailwindcss";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
