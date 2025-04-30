@@ -262,7 +262,10 @@
   .profile-banner {
     @apply h-[120px] w-full bg-gradient-mesh bg-cover bg-no-repeat;
   }
-
+.test {
+  background-color: red;
+  color: blue;
+}
   .profile {
     @apply relative flex px-6 max-xl:justify-center;
   }

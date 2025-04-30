@@ -11,9 +11,9 @@ const ibmPlexSerif = IBM_Plex_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Uncle Scorage",
-  description: "Uncle Scorage is a unique banking plataform",
-  icons: { icon: "/icons/logo.svg" },
+  title: "Snoopy",
+  description: "Snoopy is a unique banking plataform",
+  icons: { icon: "/icons/snoopy-logo.png" },
 };
 
 export default function RootLayout({
