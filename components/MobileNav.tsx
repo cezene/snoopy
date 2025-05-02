@@ -41,7 +41,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
               height={34}
               alt="Snoopy Logo"
             />
-            <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">
+            <h1 className="text26 font-ibm-plex-serif font-bold text-black-1">
               Snoopy
             </h1>
           </Link>
@@ -73,7 +73,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
                             })}
                           />
                         <p
-                          className={cn("text-16 font-semibold text-black-2", {
+                          className={cn("text16 font-semibold text-black-2", {
                             "text-white": isActive,
                           })}
                         >
