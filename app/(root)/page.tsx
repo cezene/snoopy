@@ -4,7 +4,7 @@ import TotalBalanceBox from "@/components/TotalBalanceBox";
 import RightSidebar from "@/components/RightSidebar";
 
 const Home = () => {
-  const loggedIn = { firstName: "Luna" };
+  const loggedIn = { firstName: "Luna", lastName: "Neves", email: "luna@ltda.com"};
   return (
     <section className="home">
       <div className="home-content">
