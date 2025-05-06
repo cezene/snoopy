@@ -48,7 +48,7 @@ const BankCard = ({
             width={45}
             height={32}
             alt="mastercard icon"
-            className="ml-5"
+            className="!ml-5"
             />
         </div>
         <Image 
@@ -56,7 +56,7 @@ const BankCard = ({
             width={316}
             height={190}
             alt="Lines icon"
-            className="absolute top-0 left-0"
+            className="absolute !top-0 !left-0"
             />
       </Link>
       {/*COPY */}
