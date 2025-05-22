@@ -14,9 +14,10 @@ import { useRouter } from "next/navigation";
 import { signIn, signUp } from "@/lib/actions/user.actions";
 
 const AuthForm = ({ type }: { type: string }) => {
+  const router = useRouter();
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const router = useRouter();
+
   const formSchema = authFormSchema(type);
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
@@ -26,7 +27,7 @@ const AuthForm = ({ type }: { type: string }) => {
       password: "",
       firstName: "",
       lastName: "",
-      adress1: "",
+      address1: "",
       state: "",
       postalCode: "",
       dateOfBirth: "",
@@ -42,22 +43,24 @@ const AuthForm = ({ type }: { type: string }) => {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     setIsLoading(true);
+
     try {
       //Sign up with Appwrite & create plain link token
-      // if (isSignIn) {
-      //   const response = await signIn({
-      //     email: data.email,
-      //     password: data.password,
-      //   });
-      //   if (response) {
-      //     router.push("/");
-      //   }
-      // }
+      if (isSignIn) {
+        const response = await signIn({
+          email: data.email,
+          password: data.password,
+        });
+        if (response) {
+          router.push("/");
+        }
+      }
       if (!isSignIn) {
         const newUser = await signUp(data);
         setUser(newUser);
       }
     } catch (error) {
+      console.log(error, "erro1");
     } finally {
     }
     setIsLoading(false);
@@ -118,7 +121,7 @@ const AuthForm = ({ type }: { type: string }) => {
                   />
 
                   <CustomInput
-                    name="adress1"
+                    name="address1"
                     label="Adress"
                     control={form.control}
                     placeholder="Enter your specific adress"
