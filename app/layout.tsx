@@ -13,7 +13,7 @@ const ibmPlexSerif = IBM_Plex_Serif({
 export const metadata: Metadata = {
   title: "Snoopy",
   description: "Snoopy is a unique banking plataform",
-  icons: { icon: "/icons/snoopy-logo.png" },
+  icons: { icon: "/icons/snoopy-bank-logo.png" },
 };
 
 export default function RootLayout({

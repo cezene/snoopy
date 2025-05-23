@@ -37,7 +37,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
             className="cursor-pointer flex items-center gap-1 !px-4"
           >
             <Image
-              src={"/icons/snoopy-logo.png"}
+              src={"/icons/snoopy-bank-logo.png"}
               width={34}
               height={34}
               alt="Snoopy Logo"

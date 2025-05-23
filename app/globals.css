@@ -63,8 +63,8 @@
 
   --background-image-bank-gradient: linear-gradient(
     90deg,
-rgb(245, 90, 90) 0%,
-#f79e9e 100%
+    rgb(245, 90, 90) 0%,
+    #f79e9e 100%
   );
   --background-image-bank-green-gradient: linear-gradient(
     90deg,
@@ -128,7 +128,7 @@ rgb(245, 90, 90) 0%,
 }
 
 @utility input-class {
-  @apply text16 placeholder:text16 rounded-lg border border-gray-300 text-gray-900 placeholder:text-gray-500;
+  @apply text16 !bg-yellow-50 placeholder:text16 rounded-lg border border-gray-300 text-gray-900 placeholder:text-gray-500;
 }
 
 @utility sheetContent {
@@ -371,7 +371,7 @@ rgb(245, 90, 90) 0%,
 
   /* Auth */
   .auth-asset {
-    @apply flex h-screen w-full sticky !top-0 items-center justify-end bg-sky-1 max-lg:hidden;
+    @apply flex h-screen w-full sticky !top-0 items-center justify-end max-lg:hidden;
   }
 
   /* Auth Form */
@@ -384,7 +384,7 @@ rgb(245, 90, 90) 0%,
   }
 
   .form-label {
-    @apply text14 w-full max-w-[280px] font-medium text-gray-700;
+    @apply text14 w-full max-w-[280px] font-medium text-yellow-200;
   }
 
   .form-message {
@@ -392,11 +392,11 @@ rgb(245, 90, 90) 0%,
   }
 
   .form-btn {
-    @apply text16 rounded-lg border border-bankGradient bg-bank-gradient font-semibold text-white shadow-form !mt-5;
+    @apply text16 rounded-lg border border-amber-900 bg-bank-gradient font-semibold text-white shadow-form !mt-5;
   }
 
   .form-link {
-    @apply text14 cursor-pointer font-medium text-bankGradient;
+    @apply text14 cursor-pointer font-medium text-orange-400;
   }
 
   /* Payment Transfer */
