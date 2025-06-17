@@ -23,7 +23,7 @@ const Home = async () => {
             totalCurrentBalance={1250.35}
           />
         </header>
-        RECENTE TRANSACTIONS
+        RECENT TRANSACTIONS
       </div>
       <RightSidebar
         user={loggedIn}

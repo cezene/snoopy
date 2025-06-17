@@ -71,7 +71,12 @@ rgb(245, 90, 90) 0%,
 #ff8800 0%,
 #e79701 100%
   );
-  --background-image-bank-green-gradient: linear-gradient(
+  --background-image-success-gradient: linear-gradient(
+    90deg,
+#087e2b 0%,
+#1b960f 100%
+  );
+  --background-image-blue-gradient: linear-gradient(
     90deg,
     #01797a 0%,
     #489399 100%
@@ -363,7 +368,7 @@ rgb(245, 90, 90) 0%,
 
   /* PlaidLink */
   .plaidlink-primary {
-    @apply text16 rounded-lg border border-bankGradient bg-bank-gradient font-semibold text-white shadow-form;
+    @apply text16 rounded-lg border border-amber-600 bg-orange-gradient font-semibold text-white shadow-form;
   }
 
   .plaidlink-ghost {
