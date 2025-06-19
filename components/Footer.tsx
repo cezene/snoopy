@@ -15,11 +15,11 @@ function Footer({ user, type = "desktop" }: FooterProps) {
   return (
     <footer className="footer">
       <div className={isMobile ? "footer_name-mobile" : "footer_name"}>
-        <p className="text-xl font-bold text-orange-950">{user?.name[0]}</p>
+        <p className="text-xl font-bold text-orange-950">{user?.firstName[0]}</p>
       </div>
       <div className={isMobile ? "footer_email-mobile" : "footer_email"}>
         <h1 className="text14 truncate text-red-950 font-semibold">
-          {user?.name}
+          {user?.firstName}
         </h1>
         <p className="text14 truncate font-normal text-amber-950">
           {user?.email}

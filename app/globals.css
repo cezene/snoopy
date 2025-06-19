@@ -251,10 +251,6 @@ rgb(245, 90, 90) 0%,
     @apply text14 rounded-lg border border-gray-300 !px-4 !py-2.5 font-semibold text-gray-700;
   }
 
-  .recent-transactions {
-    @apply flex w-full flex-col gap-6;
-  }
-
   .recent-transactions-label {
     @apply text20 md:text24 font-semibold text-gray-900;
   }
