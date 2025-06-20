@@ -9,7 +9,7 @@ function Footer({ user, type = "desktop" }: FooterProps) {
 
   const handleLogOut = async () => {
     const loggedOut = await logoutAccount();
-    console.log("footer-log");
+
     if (loggedOut) router.push("/sign-in");
   };
   return (

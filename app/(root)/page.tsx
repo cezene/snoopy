@@ -6,22 +6,22 @@ import { getLoggedInUser } from "@/lib/actions/user.actions";
 import { getAccount, getAccounts } from "@/lib/actions/bank.actions";
 import RecentTransactions from "@/components/RecentTransactions";
 
-const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
-  const currentPage = Number(page as string) || 1;
+const Home = async ({ searchParams}: SearchParamProps) => {
+  const searchParamsData = await searchParams;
+  const currentPage =  Number( searchParamsData.page as string) || 1;
 
   const loggedIn = await getLoggedInUser();
 
-  const accounts = await getAccounts({ userId: loggedIn.$id });
+  const accounts = await getAccounts({ userId: loggedIn?.$id });
 
   if (!accounts) return;
 
   const accountsData = accounts?.data;
 
-  const appwriteItemId = (id as string) || accountsData[0]?.appwriteItemId;
+  const appwriteItemId = (searchParamsData.id as string) || accountsData[0]?.appwriteItemId;
 
   const account = await getAccount({ appwriteItemId });
 
-  console.log(accountsData, account);
 
   return (
     <section className="home">
