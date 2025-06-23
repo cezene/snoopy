@@ -32,7 +32,7 @@ const TransactionTable = ({ transactions }: TransactionTableProps) => {
   return (
     <Table>
       <TableHeader className="bg-[#f9fagb]">
-        <TableRow>
+        <TableRow className="border-none">
           <TableHead className="!px-2">Transaction</TableHead>
           <TableHead className="!px-2">Amount</TableHead>
           <TableHead className="!px-2">Status</TableHead>
@@ -53,7 +53,7 @@ const TransactionTable = ({ transactions }: TransactionTableProps) => {
               key={t.id}
               className={`${
                 isDebit || amount[0] === "-" ? "bg[#FFFBFA]" : "bg-[#F6FEF9]"
-              } !over:bg-none !border-b-DEFAULT`}
+              } !over:bg-none !border-none !h-12`}
             >
               <TableCell className="max-w-[250px] !pl-2 !pr-10">
                 <div className="flex-items-center gap-3">
