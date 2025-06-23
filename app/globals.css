@@ -294,12 +294,12 @@ rgb(245, 90, 90) 0%,
 
   /* My Banks */
   .my-banks {
-    @apply flex h-screen max-h-screen w-full flex-col gap-8 bg-gray-25 p-8 xl:py-12;
+    @apply flex h-screen max-h-screen w-full flex-col gap-8 bg-gray-25 !p-8 xl:!py-12;
   }
 
   /* My Banks */
   .transactions {
-    @apply flex max-h-screen w-full flex-col gap-8 overflow-y-scroll bg-gray-25 p-8 xl:!py-12;
+    @apply flex max-h-screen w-full !flex-col gap-8 overflow-y-scroll bg-gray-25 !p-8 xl:!py-12;
   }
 
   .transactions-header {

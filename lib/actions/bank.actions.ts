@@ -158,6 +158,9 @@ export const getTransactions = async ({
     while (hasMore) {
       const response = await plaidClient.transactionsSync({
         access_token: accessToken,
+        options: {
+          include_personal_finance_category: true
+        }
       });
 
       const data = response.data;
@@ -170,7 +173,10 @@ export const getTransactions = async ({
         accountId: transaction.account_id,
         amount: transaction.amount,
         pending: transaction.pending,
-        category: transaction.category ? transaction.category[0] : "",
+        personalFinanceCategoryPrimary:
+        transaction.personal_finance_category?.primary || "Others",
+        personalFinanceCategoryDetailed:
+            transaction.personal_finance_category?.detailed || "Others",
         date: transaction.date,
         image: transaction.logo_url,
       }));
