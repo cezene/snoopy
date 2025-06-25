@@ -10,7 +10,7 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
         <div className="profile-banner" />
         <div className="profile">
           <div className="profile-img">
-            <span className="text-5xl font-bold text-red-500">
+            <span className="text-5xl font-bold text-lime-950">
               {user?.firstName[0]}
             </span>
           </div>
@@ -32,8 +32,9 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
               width={20}
               height={20}
               alt="plus icon"
+              className="brightness-[3] invert-0"
             />
-            <h2 className="text14 font-semibold text-gray-500">Add Bank</h2>
+            <h2 className="text14 font-semibold text-slate-50">Add Bank</h2>
           </Link>
         </div>
         {banks?.length > 0 && (

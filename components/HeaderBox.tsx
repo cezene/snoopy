@@ -11,7 +11,7 @@ const HeaderBox = ({
       <h1 className="header-box-title">
         {title}
         {type === "greeting" && (
-          <span className="text-bankGradient">
+          <span className="text-[#ff8800]">
             {" "}
             &nbsp;
             {user}

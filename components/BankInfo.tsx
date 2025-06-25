@@ -30,21 +30,17 @@ const BankInfo = ({ account, appwriteItemId, type }: BankInfoProps) => {
   return (
     <div
       onClick={handleBankChange}
-      className={cn(`bank-info ${colors.bg}`, {
-        "shadow-sm border-blue-700": type === "card" && isActive,
-        "rounded-xl": type === "card",
-        "hover:shadow-sm cursor-pointer": type === "card",
-      })}
+      className="bank-info bg-stone-900 border-2 border-slate-50 rounded-lg"
     >
       <figure
-        className={`flex-center !h-fit rounded-full bg-blue-100 ${colors.lightBg}`}
+        className={`flex-center !h-fit rounded-full bg-orange-200 ${colors.lightBg}`}
       >
         <Image
           src="/icons/connect-bank.svg"
           width={20}
           height={20}
           alt={account.subtype}
-          className="!m-2 !min-w-5"
+          className="!m-2 !min-w-5 brightness-[0.25] invert-0"
         />
       </figure>
       <div className="flex w-full flex-1 flex-col justify-center gap-1">
@@ -56,14 +52,14 @@ const BankInfo = ({ account, appwriteItemId, type }: BankInfoProps) => {
           </h2>
           {type === "full" && (
             <p
-              className={`text-12 rounded-full !px-3 !py-1 font-medium text-blue-700 ${colors.subText} ${colors.lightBg}`}
+              className={`text-12 rounded-full !px-3 !py-1 font-medium text-orange-950 ${colors.subText} ${colors.lightBg}`}
             >
               {account.subtype}
             </p>
           )}
         </div>
 
-        <p className={`text-16 font-medium text-blue-700 ${colors.subText}`}>
+        <p className={`text-16 font-medium text-slate-50 ${colors.subText}`}>
           {formatAmount(account.currentBalance)}
         </p>
       </div>

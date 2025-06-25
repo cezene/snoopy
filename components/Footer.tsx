@@ -15,18 +15,25 @@ function Footer({ user, type = "desktop" }: FooterProps) {
   return (
     <footer className="footer">
       <div className={isMobile ? "footer_name-mobile" : "footer_name"}>
-        <p className="text-xl font-bold text-orange-950">{user?.firstName[0]}</p>
+        <p className="text-xl font-bold text-orange-950">
+          {user?.firstName[0]}
+        </p>
       </div>
       <div className={isMobile ? "footer_email-mobile" : "footer_email"}>
-        <h1 className="text14 truncate text-red-950 font-semibold">
+        <h1 className="text14 truncate text-orange-300 font-semibold">
           {user?.firstName}
         </h1>
-        <p className="text14 truncate font-normal text-amber-950">
+        <p className="text14 truncate font-normal text-orange-200">
           {user?.email}
         </p>
       </div>
       <div className="footer_image" onClick={handleLogOut}>
-        <Image src="icons/logout.svg" fill alt="Logout icon" />
+        <Image
+          src="icons/logout.svg"
+          fill
+          alt="Logout icon"
+          className="brightness-[3] invert-0"
+        />
       </div>
     </footer>
   );

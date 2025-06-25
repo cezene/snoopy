@@ -20,7 +20,7 @@ import Footer from "./Footer";
 const MobileNav = ({ user }: MobileNavProps) => {
   const pathname = usePathname();
   return (
-    <section className="w-full max-w-[24px]">
+    <section className="w-full max-w-[24px] bg-zinc-950">
       <Sheet>
         <SheetTrigger>
           <Image
@@ -31,7 +31,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
             className="cursor-pointer"
           />
         </SheetTrigger>
-        <SheetContent side="left" className="borber-none bg-white">
+        <SheetContent side="left" className="borber-none bg-zinc-950">
           <Link
             href="/"
             className="cursor-pointer flex items-center gap-1 !px-4"
@@ -60,7 +60,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
                         href={item.route}
                         key={item.label}
                         className={cn("mobilenav-sheet_close w-full h-12", {
-                          "bg-bank-gradient": isActive,
+                          "bg-orange-gradient": isActive,
                         })}
                       >
                           <Image
@@ -68,15 +68,11 @@ const MobileNav = ({ user }: MobileNavProps) => {
                             alt={item.label}
                             width={20}
                             height={20}
-
-                            className={cn({
-                              "brightness-[3] invert-0": isActive,
-                            })}
+                            className=
+                              "brightness-[3] invert-0"
                           />
                         <p
-                          className={cn("text16 font-semibold text-black-2", {
-                            "text-white": isActive,
-                          })}
+                          className="text16 font-semibold text-slate-50"
                         >
                           {item.label}
                         </p>
