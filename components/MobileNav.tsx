@@ -28,7 +28,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
             width={30}
             height={30}
             alt="menu"
-            className="cursor-pointer"
+            className="cursor-pointer brightness-[3] invert-0"
           />
         </SheetTrigger>
         <SheetContent side="left" className="borber-none bg-zinc-950">
@@ -42,7 +42,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
               height={34}
               alt="Snoopy Logo"
             />
-            <h1 className="text26 font-ibm-plex-serif font-bold text-black-1">
+            <h1 className="text26 font-ibm-plex-serif font-bold text-slate-50">
               Snoopy
             </h1>
           </Link>

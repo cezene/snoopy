@@ -93,63 +93,43 @@ export const ITEMS = [
 
 export const transactionCategoryStyles = {
   "FOOD_AND_DRINK": {
-    borderColor: "border-pink-600",
     backgroundColor: "bg-pink-500",
-    textColor: "text-pink-700",
-    chipBackgroundColor: "bg-inherit",
+    textColor: "text-pink-300"
   },
   Payment: {
-    borderColor: "border-success-600",
     backgroundColor: "bg-green-600",
-    textColor: "text-success-700",
-    chipBackgroundColor: "bg-inherit",
+    textColor: "text-success-300"
   },
   "GENERAL_MERCHANDISE": {
-    borderColor: "border-success-600",
     backgroundColor: "bg-green-600",
-    textColor: "text-success-700",
-    chipBackgroundColor: "bg-inherit",
+    textColor: "text-green-300"
   },
   TRANSPORTATION: {
-    borderColor: "border-[#0047AB]",
     backgroundColor: "bg-blue-500",
-    textColor: "text-blue-700",
-    chipBackgroundColor: "bg-[#ECFDF3]",
+    textColor: "text-blue-300"
   },
   "LOAN_PAYMENTS": {
-    borderColor: "border-red-700",
     backgroundColor: "bg-red-700",
-    textColor: "text-red-700",
-    chipBackgroundColor: "bg-inherit",
+    textColor: "text-red-300"
   },
   "INCOME": {
-    borderColor: "border-[#12B76A]",
-    backgroundColor: "bg-[#12B76A]",
-    textColor: "text-[#027A48]",
-    chipBackgroundColor: "bg-[#ECFDF3]",
+    backgroundColor: "bg-lime-500",
+    textColor: "text-lime-300"
   },
   Processing: {
-    borderColor: "border-[#F2F4F7]",
-    backgroundColor: "bg-gray-500",
-    textColor: "text-[#344054]",
-    chipBackgroundColor: "bg-[#F2F4F7]",
+    backgroundColor: "bg-gray-300",
+    textColor: "text-gray-300"
   },
   Success: {
-    borderColor: "border-[#12B76A]",
     backgroundColor: "bg-[#12B76A]",
-    textColor: "text-[#027A48]",
-    chipBackgroundColor: "bg-[#ECFDF3]",
+    textColor: "text-lime-300"
   },
   TRAVEL: {
-    borderColor: "border-[#0047AB]",
     backgroundColor: "bg-blue-500",
-    textColor: "text-blue-700",
-    chipBackgroundColor: "bg-[#ECFDF3]",
+    textColor: "text-cyan-300"
   },
   default: {
-    borderColor: "",
-    backgroundColor: "bg-blue-500",
-    textColor: "text-blue-700",
-    chipBackgroundColor: "bg-inherit",
+    backgroundColor: "bg-emerald-700",
+    textColor: "text-emerald-400"
   },
 };

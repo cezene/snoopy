@@ -26,7 +26,7 @@ export const getAccounts = async ({ userId }: getAccountsProps) => {
       validBanks?.map(async (bank: Bank) => {
         // get each account info from plaid
         const accountsResponse = await plaidClient.accountsGet({
-          access_token: bank.accessToken,
+          access_token: bank?.accessToken,
         });
         const accountData = accountsResponse.data.accounts[0];
 
@@ -98,7 +98,7 @@ export const getAccount = async ({ appwriteItemId }: getAccountProps) => {
       institutionId: accountsResponse.data.item.institution_id!,
     });
     const transactions = await getTransactions({
-      accessToken: bank.accessToken,
+      accessToken: bank?.accessToken,
     });
 
     const account = {

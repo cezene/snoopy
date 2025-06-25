@@ -25,7 +25,7 @@ const TransactionHistory = async ({
 
 
   return (
-    <div className="transactions">
+    <div className="transactions bg-zinc-950">
       <div className="transactions-header">
         <HeaderBox
           title="Transaction History"
@@ -35,11 +35,11 @@ const TransactionHistory = async ({
       <div className="!space-y-6">
         <div className="transactions-account">
           <div className="flex flex-col gap-2">
-            <h2 className="text18 font-bold text-white">
+            <h2 className="text18 font-bold text-slate-50">
               {account?.data.name}
             </h2>
-            <p className="text14 text-blue-25">{account?.data.officialName}</p>
-            <p className="text14 font-semibold tracking-[1.1px] text-white">
+            <p className="text14 text-slate-50">{account?.data.officialName}</p>
+            <p className="text14 font-semibold tracking-[1.1px] text-slate-50">
               ● ● ● ● ● ● ● ● ● ● ● ●{account?.data.mask}
             </p>
           </div>

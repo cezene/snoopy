@@ -63,23 +63,23 @@
 
   --background-image-bank-gradient: linear-gradient(
     90deg,
-rgb(245, 90, 90) 0%,
-#f79e9e 100%
+    rgb(245, 90, 90) 0%,
+    #f79e9e 100%
   );
   --background-image-orange-gradient: linear-gradient(
     90deg,
-#ff8800 0%,
-#e79701 100%
+    #ff8800 0%,
+    #e79701 100%
   );
   --background-image-total-balance-gradient: linear-gradient(
     90deg,
-#ffa94d 0%,
-#fb923c 100%
+    #ffa94d 0%,
+    #fb923c 100%
   );
   --background-image-success-gradient: linear-gradient(
     90deg,
-#087e2b 0%,
-#1b960f 100%
+    #087e2b 0%,
+    #1b960f 100%
   );
   --background-image-blue-gradient: linear-gradient(
     90deg,
@@ -270,7 +270,7 @@ rgb(245, 90, 90) 0%,
   }
 
   .profile-banner {
-    @apply h-[120px] w-full bg-gradient-to-r from-lime-900 to-green-400 bg-cover bg-no-repeat;
+    @apply h-[120px] w-full bg-gradient-to-r from-[#408724] to-green-400 bg-cover bg-no-repeat;
   }
 
   .profile {
@@ -312,11 +312,11 @@ rgb(245, 90, 90) 0%,
   }
 
   .transactions-account {
-    @apply flex flex-col justify-between gap-4 rounded-lg border-y bg-blue-600 !px-4 !py-5 md:flex-row;
+    @apply flex flex-col justify-between gap-4  bg-stone-900 border-2 border-slate-50 rounded-lg !px-4 !py-5 md:flex-row;
   }
 
   .transactions-account-balance {
-    @apply flexCenter flex-col  gap-2 rounded-md bg-blue-25/20 !px-4 !py-2 text-white;
+    @apply flexCenter flex-col  gap-2 rounded-md bg-orange-400 !px-4 !py-2 text-white;
   }
 
   .header-box {
@@ -351,7 +351,7 @@ rgb(245, 90, 90) 0%,
 
   /* Category Badge */
   .category-badge {
-    @apply flexCenter truncate w-fit gap-1 rounded-2xl border-[1.5px] !py-[2px] !pl-1.5 !pr-2;
+    @apply flexCenter truncate w-fit gap-1 !py-[2px] !pl-1.5 !pr-2;
   }
 
   .banktab-item {
@@ -373,11 +373,11 @@ rgb(245, 90, 90) 0%,
   }
 
   .plaidlink-ghost {
-    @apply flex cursor-pointer items-center justify-center gap-3 rounded-lg !px-3 !py-7 hover:bg-white lg:justify-start;
+    @apply flex cursor-pointer items-center justify-center !gap-3 rounded-lg !px-3 !py-7 hover:bg-white lg:justify-start;
   }
 
   .plaidlink-default {
-    @apply flex !justify-start cursor-pointer gap-3 rounded-lg !bg-transparent flex-row;
+    @apply flex !justify-start cursor-pointer !gap-3 rounded-lg !bg-transparent flex-row !pl-3;
   }
 
   /* Auth */
