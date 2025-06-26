@@ -25,7 +25,7 @@ const TransactionHistory = async ({
 
 
   return (
-    <div className="transactions bg-zinc-950">
+    <div className="transactions">
       <div className="transactions-header">
         <HeaderBox
           title="Transaction History"
