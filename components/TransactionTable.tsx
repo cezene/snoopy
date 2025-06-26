@@ -12,7 +12,6 @@ import {
   formatAmount,
   formatDateTime,
   getTransactionStatus,
-  removeSpecialCharacters,
 } from "@/lib/utils";
 
 const CategoryBadge = ({ category }: CategoryBadgeProps) => {
@@ -45,7 +44,6 @@ const TransactionTable = ({ transactions }: TransactionTableProps) => {
         {transactions?.map((t: Transaction) => {
           const status = getTransactionStatus(new Date(t.date));
           const amount = formatAmount(t.amount);
-
           const isDebit = t.type === "debit";
           const isCredit = t.type === "credit";
           return (
@@ -56,7 +54,7 @@ const TransactionTable = ({ transactions }: TransactionTableProps) => {
               <TableCell className="max-w-[250px] !pl-2 !pr-10">
                 <div className="flex-items-center gap-3">
                   <h1 className="text14 truncate font-semibold">
-                    {removeSpecialCharacters(t.name)}
+                    {t.name}
                   </h1>
                 </div>
               </TableCell>
@@ -79,7 +77,7 @@ const TransactionTable = ({ transactions }: TransactionTableProps) => {
                 {t.paymentChannel}
               </TableCell>
               <TableCell className="max-md:hidden !pl-2! pr-10">
-                <CategoryBadge category={t.personalFinanceCategoryPrimary || t.personalFinanceCategoryDetailed  } />
+                <CategoryBadge category={t.personalFinanceCategoryPrimary || t.personalFinanceCategoryDetailed || "Others" } />
               </TableCell>
             </TableRow>
           );
