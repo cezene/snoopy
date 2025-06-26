@@ -225,15 +225,15 @@
   }
 
   .home-content {
-    @apply no-scrollbar flex w-full flex-1 flex-col gap-8 !px-8 sm:!px-8 !py-7 lg:!py-12 xl:max-h-screen xl:overflow-y-scroll;
+    @apply no-scrollbar flex w-full flex-1 flex-col !gap-8 !px-8 sm:!px-8 !py-7 lg:!py-12 xl:max-h-screen xl:overflow-y-scroll;
   }
 
   .home-header {
-    @apply flex flex-col justify-between gap-4;
+    @apply flex flex-col justify-between !gap-4;
   }
 
   .total-balance {
-    @apply flex max-w-lg w-full items-center gap-4 rounded-xl !p-4 shadow-chart sm:gap-6 sm:!p-6 bg-orange-gradient;
+    @apply flex max-w-lg w-full items-center !gap-4 rounded-xl !p-4 shadow-chart sm:!gap-6 sm:!p-6 bg-orange-gradient;
   }
 
   .total-balance-chart {
@@ -249,7 +249,7 @@
   }
 
   .recent-transactions {
-    @apply flex w-full flex-col gap-6;
+    @apply flex w-full flex-col !gap-6;
   }
 
   .view-all-btn {
@@ -294,7 +294,7 @@
   }
 
   .banks {
-    @apply flex flex-col justify-between gap-8 !px-6 !py-8;
+    @apply flex flex-col justify-between !gap-8 !px-6 !py-8;
   }
 
   /* My Banks */
@@ -304,23 +304,23 @@
 
   /* My Banks */
   .transactions {
-    @apply flex max-h-screen w-full !flex-col gap-8 overflow-y-scroll bg-zinc-950 !p-8 xl:!py-12;
+    @apply flex max-h-screen w-full !flex-col !gap-8 overflow-y-scroll bg-zinc-950 !p-8 xl:!py-12;
   }
 
   .transactions-header {
-    @apply flex w-full flex-col items-start justify-between gap-8 md:flex-row;
+    @apply flex w-full flex-col items-start justify-between !gap-8 md:flex-row;
   }
 
   .transactions-account {
-    @apply flex flex-col justify-between gap-4  bg-stone-900 border-2 border-slate-50 rounded-lg !px-4 !py-5 md:flex-row;
+    @apply flex flex-col justify-between !gap-4  bg-stone-900 border-2 border-slate-50 rounded-lg !px-4 !py-5 md:flex-row;
   }
 
   .transactions-account-balance {
-    @apply flexCenter flex-col  gap-2 rounded-md bg-orange-400 !px-4 !py-2 text-white;
+    @apply flexCenter flex-col  !gap-2 rounded-md bg-orange-400 !px-4 !py-2 text-white;
   }
 
   .header-box {
-    @apply flex flex-col gap-1;
+    @apply flex flex-col !gap-1;
   }
 
   .header-box-title {
@@ -346,16 +346,16 @@
 
   /* Bank Info */
   .bank-info {
-    @apply gap-[18px] flex !p-4 transition-all border bg-blue-25 border-transparent;
+    @apply !gap-[18px] flex !p-4 transition-all border bg-blue-25 border-transparent;
   }
 
   /* Category Badge */
   .category-badge {
-    @apply flexCenter truncate w-fit gap-1 !py-[2px] !pl-1.5 !pr-2;
+    @apply flexCenter truncate w-fit !gap-1 !py-[2px] !pl-1.5 !pr-2;
   }
 
   .banktab-item {
-    @apply gap-[18px] border-b-2 flex !px-2 sm:!px-4 !py-2 transition-all;
+    @apply !gap-[18px] border-b-2 flex !px-2 sm:!px-4 !py-2 transition-all;
   }
 
   /* Mobile nav */
@@ -364,7 +364,7 @@
   }
 
   .mobilenav-sheet_close {
-    @apply flex gap-3 items-center !p-4 rounded-lg w-full max-w-60;
+    @apply flex !gap-3 items-center !p-4 rounded-lg w-full max-w-60;
   }
 
   /* PlaidLink */
@@ -387,11 +387,11 @@
 
   /* Auth Form */
   .auth-form {
-    @apply flex min-h-screen w-full max-w-[420px] flex-col justify-center gap-5 !py-10 md:gap-8;
+    @apply flex min-h-screen w-full max-w-[420px] flex-col justify-center !gap-5 !py-10 md:!gap-8;
   }
 
   .form-item {
-    @apply flex flex-col gap-1.5;
+    @apply flex flex-col !gap-1.5;
   }
 
   .form-label {
@@ -416,19 +416,19 @@
   }
 
   .payment-transfer_form-item {
-    @apply flex w-full max-w-[850px] flex-col gap-3 md:flex-row lg:gap-8;
+    @apply flex w-full max-w-[850px] flex-col !gap-3 md:flex-row lg:!gap-8;
   }
 
   .payment-transfer_form-content {
-    @apply flex w-full max-w-[280px] flex-col gap-2;
+    @apply flex w-full max-w-[280px] flex-col !gap-2;
   }
 
   .payment-transfer_form-details {
-    @apply flex flex-col gap-1 border-t border-gray-200 !pb-5 !pt-6;
+    @apply flex flex-col !gap-1 border-t border-slate-50 !pb-5 !pt-6;
   }
 
   .payment-transfer_btn-box {
-    @apply !mt-5 flex w-full max-w-[850px] gap-3 border-gray-200 !py-5;
+    @apply !mt-5 flex w-full max-w-[850px] !gap-3 border-slate-50 !py-5;
   }
 
   .payment-transfer_btn {
@@ -442,12 +442,12 @@
 
   /* Bank Info */
   .bank-info_content {
-    @apply flex flex-1 items-center justify-between gap-2 overflow-hidden;
+    @apply flex flex-1 items-center justify-between !gap-2 overflow-hidden;
   }
 
   /* Footer */
   .footer {
-    @apply flex cursor-pointer items-center justify-between gap-2 !py-6;
+    @apply flex cursor-pointer items-center justify-between !gap-2 !py-6;
   }
 
   .footer_name {
@@ -484,7 +484,7 @@
   }
 
   .sidebar-link {
-    @apply flex gap-3 items-center !py-1 md:!p-3 2xl:!p-4 rounded-lg justify-center xl:justify-start;
+    @apply flex !gap-3 items-center !py-1 md:!p-3 2xl:!p-4 rounded-lg justify-center xl:justify-start;
   }
 
   .sidebar-label {

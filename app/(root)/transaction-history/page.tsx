@@ -29,7 +29,7 @@ const TransactionHistory = async ({
       <div className="transactions-header">
         <HeaderBox
           title="Transaction History"
-          subtext="See your bank details and transactions."
+          subtext="Dig into your past transactions with ease."
         />
       </div>
       <div className="!space-y-6">

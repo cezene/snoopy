@@ -14,7 +14,7 @@ const MyBanks = async () => {
       <div className="my-banks">
         <HeaderBox
           title="My Bank Accounts"
-          subtext="Effortlessly manage your banking activites"
+          subtext="Fetch your financial overview with ease!"
         />
         <div className="!space-y-4">
           <h2 className="header2">Your cards</h2>

@@ -55,7 +55,7 @@ const BankCard = ({
           className="absolute !top-0 !left-0"
         />
       </Link>
-      {showBalance && <Copy title={account?.sharaebleId} />}
+      {showBalance && <Copy title={account?.shareableId} />}
     </div>
   );
 };

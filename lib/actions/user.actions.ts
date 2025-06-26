@@ -149,7 +149,7 @@ export const createBankAccount = async ({
   accountId,
   accessToken,
   fundingSourceUrl,
-  shareabledId,
+  shareableId,
 }: createBankAccountProps) => {
   const { database } = await createAdminClient();
   const bankAccount = await database.createDocument(
@@ -162,7 +162,7 @@ export const createBankAccount = async ({
       accountId,
       accessToken,
       fundingSourceUrl,
-      shareabledId,
+      shareableId,
     }
   );
   return parseStringify(bankAccount);
@@ -217,7 +217,7 @@ export const exchangePublicToken = async ({
       accountId: accountData.account_id,
       accessToken,
       fundingSourceUrl,
-      shareabledId: encryptId(accountData.account_id),
+      shareableId: encryptId(accountData.account_id),
     });
 
     // Revalidate the path to reflect the changes
