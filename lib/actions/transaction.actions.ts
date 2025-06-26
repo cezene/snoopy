@@ -12,7 +12,6 @@ const {
 export const createTransaction = async (
   transaction: CreateTransactionProps
 ) => {
-
   try {
     const { database } = await createAdminClient();
     const newTransaction = await database.createDocument(
@@ -26,12 +25,11 @@ export const createTransaction = async (
   } catch (error) {
     console.log(error);
   }
-}
+};
 
 export const getTransactionsByBankId = async ({
   bankId,
 }: getTransactionsByBankIdProps) => {
-
   try {
     const { database } = await createAdminClient();
     const senderTransactions = await database.listDocuments(
@@ -48,12 +46,14 @@ export const getTransactionsByBankId = async ({
 
     const transactions = {
       total: senderTransactions.total + receiverTransactions.total,
-      documents: [ ...senderTransactions.documents, receiverTransactions.documents ]
-
-    }
+      documents: [
+        ...senderTransactions.documents,
+        receiverTransactions.documents,
+      ],
+    };
 
     return parseStringify(transactions);
   } catch (error) {
     console.log(error);
   }
-}
+};
