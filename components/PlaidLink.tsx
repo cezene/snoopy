@@ -66,7 +66,7 @@ const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
           </p>
         </Button>
       ) : (
-        <Button onClick={() => open()} className="plaidlink-default">
+        <Button onClick={() => open()} className="plaidlink-default sidebar-link">
           <Image
             src="/icons/connect-bank.svg"
             alt="Connect bank"

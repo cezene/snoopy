@@ -13,6 +13,7 @@ import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { signIn, signUp } from "@/lib/actions/user.actions";
 import PlaidLink from "./PlaidLink";
+import TestUserDialog from "./TestUserDialog";
 
 const AuthForm = ({ type }: { type: string }) => {
   const router = useRouter();
@@ -54,8 +55,8 @@ const AuthForm = ({ type }: { type: string }) => {
       dateOfBirth: data.dateOfBirth!,
       ssn: data.ssn!,
       email: data.email,
-      password: data.password
-    }
+      password: data.password,
+    };
 
     try {
       //Sign up with Appwrite & create plain link token
@@ -104,11 +105,12 @@ const AuthForm = ({ type }: { type: string }) => {
           </p>
         </div>
       </header>
-      { user ? ( 
+      {user ? (
         <div className="flex flex-col gap-4">
-          <PlaidLink user={user} variant="primary"/>
+          <PlaidLink user={user} variant="primary" />
+          <TestUserDialog />
         </div>
-       ) : ( 
+      ) : (
         <>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -211,7 +213,7 @@ const AuthForm = ({ type }: { type: string }) => {
             </Link>
           </footer>
         </>
-       )} 
+      )}
     </section>
   );
 };
