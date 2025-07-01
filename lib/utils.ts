@@ -78,7 +78,9 @@ export function formatAmount(amount: number): string {
 
 export const parseStringify = (value: any) => JSON.parse(JSON.stringify(value));
 
-
+export const removeSpecialCharacters = (value: string) => {
+  return value.replace(/[^\w\s]/gi, "");
+};
 
 interface UrlQueryParams {
   params: string;
@@ -135,7 +137,7 @@ export function countTransactionCategories(
  if (transactions) {
     transactions.forEach((transaction) => {
       // Extract the category from the transaction
-      const category = transaction.category;
+      const category = transaction.personalFinanceCategoryPrimary;
 
       // If the category exists in the categoryCounts object, increment its count
       if (categoryCounts.hasOwnProperty(category)) {
