@@ -50,86 +50,91 @@ export const ITEMS = [
 ];
 
 export const topCategoryStyles = {
-  "FOOD_AND_DRINK": {
-    bg: "bg-blue-25",
-    circleBg: "bg-blue-100",
+  FOOD_AND_DRINK: {
+    circleBg: "bg-pink-200",
     text: {
-      main: "text-blue-900",
-      count: "text-blue-700",
+      main: "text-pink-300",
+      count: "text-pink-400",
     },
     progress: {
-      bg: "bg-blue-100",
-      indicator: "bg-blue-700",
+      indicator: "bg-pink-500",
     },
     icon: "/icons/monitor.svg",
   },
   TRAVEL: {
-    bg: "bg-success-25",
     circleBg: "bg-success-100",
     text: {
-      main: "text-success-900",
-      count: "text-success-700",
+      main: "text-lime-300",
+      count: "text-lime-300",
     },
     progress: {
-      bg: "bg-success-100",
       indicator: "bg-success-700",
     },
     icon: "/icons/coins.svg",
   },
-  default: {
-    bg: "bg-pink-25",
-    circleBg: "bg-pink-100",
+  TRANSPORTATION: {
+    circleBg: "bg-blue-200",
     text: {
-      main: "text-pink-900",
-      count: "text-pink-700",
+      main: "text-blue-300",
+      count: "text-blue-300",
     },
     progress: {
-      bg: "bg-pink-100",
-      indicator: "bg-pink-700",
+      indicator: "bg-blue-400",
+    },
+    icon: "/icons/coins.svg",
+  },
+  default: {
+    circleBg: "bg-orange-100",
+    text: {
+      main: "text-orange-300",
+      count: "text-orange-300",
+    },
+    progress: {
+      indicator: "bg-orange-500",
     },
     icon: "/icons/shopping-bag.svg",
   },
 };
 
 export const transactionCategoryStyles = {
-  "FOOD_AND_DRINK": {
+  FOOD_AND_DRINK: {
     backgroundColor: "bg-pink-500",
-    textColor: "text-pink-300"
+    textColor: "text-pink-300",
   },
   Payment: {
     backgroundColor: "bg-green-600",
-    textColor: "text-success-300"
+    textColor: "text-success-300",
   },
-  "GENERAL_MERCHANDISE": {
+  GENERAL_MERCHANDISE: {
     backgroundColor: "bg-green-600",
-    textColor: "text-green-300"
+    textColor: "text-green-300",
   },
   TRANSPORTATION: {
     backgroundColor: "bg-blue-500",
-    textColor: "text-blue-300"
+    textColor: "text-blue-300",
   },
-  "LOAN_PAYMENTS": {
+  LOAN_PAYMENTS: {
     backgroundColor: "bg-red-700",
-    textColor: "text-red-300"
+    textColor: "text-red-300",
   },
-  "INCOME": {
+  INCOME: {
     backgroundColor: "bg-lime-500",
-    textColor: "text-lime-300"
+    textColor: "text-lime-300",
   },
   Processing: {
     backgroundColor: "bg-gray-300",
-    textColor: "text-gray-300"
+    textColor: "text-gray-300",
   },
   Success: {
     backgroundColor: "bg-[#12B76A]",
-    textColor: "text-lime-300"
+    textColor: "text-lime-300",
   },
   TRAVEL: {
     backgroundColor: "bg-blue-500",
-    textColor: "text-cyan-300"
+    textColor: "text-cyan-300",
   },
   default: {
     backgroundColor: "bg-emerald-700",
-    textColor: "text-emerald-400"
+    textColor: "text-emerald-400",
   },
 };
