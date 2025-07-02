@@ -1,5 +1,6 @@
 import MobileNav from "@/components/MobileNav";
 import Sidebar from "@/components/Sidebar";
+import TestUserDialog from "@/components/TestUserDialog";
 import { getLoggedInUser } from "@/lib/actions/user.actions";
 import Image from "next/image";
 import { redirect } from "next/navigation";
@@ -9,19 +10,25 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const loggedIn = await getLoggedInUser();
-  if(!loggedIn) redirect("/sign-in");
+  if (!loggedIn) redirect("/sign-in");
 
   return (
     <main className="flex h-screen w-full font-inter bg-zinc-950">
-      <Sidebar user={loggedIn}/>
+      <Sidebar user={loggedIn} />
       <div className="flex size-full flex-col">
         <div className="root-layout">
-          <Image src={"/icons/snoopy-logo.png"} width={30} height={30} alt="Menu Icon"/>
-            <div>
-              <MobileNav user={loggedIn}/>
-            </div>
+          <Image
+            src={"/icons/snoopy-logo.png"}
+            width={30}
+            height={30}
+            alt="Menu Icon"
+          />
+          <TestUserDialog />
+          <div>
+            <MobileNav user={loggedIn} />
+          </div>
         </div>
-      {children}
+        {children}
       </div>
     </main>
   );

@@ -19,7 +19,7 @@ import TestUserDialog from "./TestUserDialog";
 const MobileNav = ({ user }: MobileNavProps) => {
   const pathname = usePathname();
   return (
-    <section className="w-full max-w-[24px] bg-zinc-950">
+    <section className="w-full bg-zinc-950">
       <Sheet>
         <SheetTrigger>
           <Image
@@ -30,10 +30,10 @@ const MobileNav = ({ user }: MobileNavProps) => {
             className="cursor-pointer brightness-[3] invert-0"
           />
         </SheetTrigger>
-        <SheetContent side="left" className="borber-none bg-zinc-950">
+        <SheetContent side="left" className="borber-none bg-zinc-950 !ml-3">
           <Link
             href="/"
-            className="cursor-pointer flex items-center gap-1 !px-4"
+            className="cursor-pointer flex items-center !gap-1 !px-4"
           >
             <Image
               src={"/icons/snoopy-bank-logo.png"}
@@ -47,7 +47,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
           </Link>
           <div className="mobilenav-sheet">
             <SheetClose asChild>
-              <nav className="flex h-full flex-col gap-6 !pt-16 text-white">
+              <nav className="flex h-full flex-col !gap-6 !pt-16 text-white">
                 {sidebarLinks.map((item) => {
                   const isActive =
                     pathname === item.route ||
@@ -62,17 +62,14 @@ const MobileNav = ({ user }: MobileNavProps) => {
                           "bg-orange-gradient": isActive,
                         })}
                       >
-                          <Image
-                            src={item.imgURL}
-                            alt={item.label}
-                            width={20}
-                            height={20}
-                            className=
-                              "brightness-[3] invert-0"
-                          />
-                        <p
-                          className="text16 font-semibold text-slate-50"
-                        >
+                        <Image
+                          src={item.imgURL}
+                          alt={item.label}
+                          width={20}
+                          height={20}
+                          className="brightness-[3] invert-0"
+                        />
+                        <p className="text16 font-semibold text-slate-50">
                           {item.label}
                         </p>
                       </Link>
@@ -80,10 +77,9 @@ const MobileNav = ({ user }: MobileNavProps) => {
                   );
                 })}
                 <PlaidLink user={user} />
-                <TestUserDialog />
-                </nav>
+              </nav>
             </SheetClose>
-            <Footer user={user} type="mobile"/>
+            <Footer user={user} type="mobile" />
           </div>
         </SheetContent>
       </Sheet>
