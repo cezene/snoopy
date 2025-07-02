@@ -10,12 +10,11 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import Footer from "./Footer";
+import PlaidLink from "./PlaidLink";
+import TestUserDialog from "./TestUserDialog";
 
 const MobileNav = ({ user }: MobileNavProps) => {
   const pathname = usePathname();
@@ -80,7 +79,8 @@ const MobileNav = ({ user }: MobileNavProps) => {
                     </SheetClose>
                   );
                 })}
-                USER
+                <PlaidLink user={user} />
+                <TestUserDialog />
                 </nav>
             </SheetClose>
             <Footer user={user} type="mobile"/>

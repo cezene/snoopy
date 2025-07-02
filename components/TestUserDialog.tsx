@@ -14,7 +14,7 @@ const TestUserDialog = () => {
         <DialogTrigger className="sidebar-link font-semibold text-yellow-200 cursor-pointer">
           Test User Credentials
         </DialogTrigger>
-        <DialogContent className="!bg-stone-900 !h-[300px] text-slate-50 border-slate-50 flex items-center justify-center !gap-2 !px-10">
+        <DialogContent className="!bg-stone-900 !h-[300px] text-slate-50 border-slate-50 flex-col !gap-2 !px-10 flex md: flex-row items-center justify-center">
           <Image
             src="/icons/snoopy-credentials.png"
             className="rounded-xl !ml-10"
