@@ -116,7 +116,7 @@ const AuthForm = ({ type }: { type: string }) => {
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               {!isSignIn && (
                 <div>
-                  <div className="flex gap-4">
+                  <div className="flex !gap-4">
                     <CustomInput
                       name="firstName"
                       label="First Name"
@@ -142,33 +142,40 @@ const AuthForm = ({ type }: { type: string }) => {
                     label="Adress"
                     control={form.control}
                     placeholder="Enter your specific adress"
+                    maxLength={50}
                   />
-                  <div className="flex gap-4">
+                  <div className="flex !gap-4">
                     <CustomInput
                       name="state"
                       label="State"
                       control={form.control}
                       placeholder="Example: NY"
+                      maxLength={2}
                     />
                     <CustomInput
                       name="postalCode"
                       label="Postal Code"
                       control={form.control}
                       placeholder="Example: 11101"
+                      minLength={5}
+                      maxLength={5}
                     />
                   </div>
-                  <div className="flex gap-4">
+                  <div className="flex !gap-4">
                     <CustomInput
                       name="dateOfBirth"
                       label="Date of Birth"
                       control={form.control}
                       placeholder="yyyy-mm-dd"
+                      maxLength={10}
                     />
                     <CustomInput
                       name="ssn"
                       label="SSN"
                       control={form.control}
                       placeholder="Example: 1234"
+                      minLength={4}
+                      maxLength={4}
                     />
                   </div>
                 </div>
@@ -184,6 +191,8 @@ const AuthForm = ({ type }: { type: string }) => {
                 label="Password"
                 control={form.control}
                 placeholder="Enter your password"
+                minLength={8}
+                maxLength={8}
               />
               <div className="flex flex-col gap-4">
                 <Button type="submit" className="form-btn" disabled={isLoading}>

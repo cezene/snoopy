@@ -118,7 +118,7 @@ const PaymentTransferForm = ({ accounts }: PaymentTransferFormProps) => {
                       otherStyles="!w-full"
                     />
                   </FormControl>
-                  <FormMessage className="text-12 text-red-500" />
+                  <FormMessage className="text-12 text-red-300" />
                 </div>
               </div>
             </FormItem>
@@ -229,7 +229,7 @@ const PaymentTransferForm = ({ accounts }: PaymentTransferFormProps) => {
                       {...field}
                     />
                   </FormControl>
-                  <FormMessage className="text12 text-red-500" />
+                  <FormMessage className="text12 text-red-400" />
                 </div>
               </div>
             </FormItem>
