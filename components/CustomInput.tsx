@@ -1,4 +1,3 @@
-import React from "react";
 import {
   FormControl,
   FormField,
@@ -19,6 +18,7 @@ interface CustomInputProps {
   control: Control<z.infer<typeof formSchema>>;
   minLength?: number;
   maxLength?: number;
+  typeOfInput?: string;
 }
 
 const CustomInput = ({
@@ -28,6 +28,7 @@ const CustomInput = ({
   control,
   minLength,
   maxLength,
+  typeOfInput = "text",
 }: CustomInputProps) => {
   return (
     <FormField
@@ -43,7 +44,7 @@ const CustomInput = ({
                 minLength={minLength}
                 maxLength={maxLength}
                 className="input-class"
-                type={name === "password" ? "password" : "text"}
+                type={typeOfInput}
                 {...field}
               />
             </FormControl>

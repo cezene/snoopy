@@ -113,7 +113,7 @@ const AuthForm = ({ type }: { type: string }) => {
       ) : (
         <>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="!space-y-8">
               {!isSignIn && (
                 <div>
                   <div className="flex !gap-4">
@@ -157,6 +157,7 @@ const AuthForm = ({ type }: { type: string }) => {
                       label="Postal Code"
                       control={form.control}
                       placeholder="Example: 11101"
+                      typeOfInput="text"
                       minLength={5}
                       maxLength={5}
                     />
@@ -167,13 +168,14 @@ const AuthForm = ({ type }: { type: string }) => {
                       label="Date of Birth"
                       control={form.control}
                       placeholder="yyyy-mm-dd"
-                      maxLength={10}
+                      typeOfInput="date"
                     />
                     <CustomInput
                       name="ssn"
                       label="SSN"
                       control={form.control}
                       placeholder="Example: 1234"
+                      typeOfInput="text"
                       minLength={4}
                       maxLength={4}
                     />
@@ -191,8 +193,8 @@ const AuthForm = ({ type }: { type: string }) => {
                 label="Password"
                 control={form.control}
                 placeholder="Enter your password"
+                typeOfInput="password"
                 minLength={8}
-                maxLength={8}
               />
               <div className="flex flex-col gap-4">
                 <Button type="submit" className="form-btn" disabled={isLoading}>

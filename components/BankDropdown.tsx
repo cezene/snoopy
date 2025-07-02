@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useSearchParams, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import {
   Select,
@@ -18,26 +18,38 @@ export const BankDropdown = ({
   accounts = [],
   setValue,
   otherStyles,
+  senderBank,
 }: BankDropdownProps) => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [selected, setSeclected] = useState(accounts[0]);
 
-  const handleBankChange = (id: string) => {
-    const account = accounts.find((account) => account.appwriteItemId === id)!;
+  const handleBankChange = useCallback(
+    (id: string) => {
+      const account = accounts.find(
+        (account) => account.appwriteItemId === id
+      )!;
 
-    setSeclected(account);
-    const newUrl = formUrlQuery({
-      params: searchParams.toString(),
-      key: "id",
-      value: id,
-    });
-    router.push(newUrl, { scroll: false });
+      setSeclected(account);
+      const newUrl = formUrlQuery({
+        params: searchParams.toString(),
+        key: "id",
+        value: id,
+      });
+      router.push(newUrl, { scroll: false });
 
-    if (setValue) {
-      setValue("senderBank", id);
+      if (setValue) {
+        setValue("senderBank", id);
+      }
+    },
+    [accounts, router, searchParams, setValue]
+  );
+
+  useEffect(() => {
+    if (senderBank === "") {
+      handleBankChange(accounts[0].appwriteItemId);
     }
-  };
+  }, [handleBankChange, accounts, senderBank]);
 
   return (
     <Select
