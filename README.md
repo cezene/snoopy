@@ -1,80 +1,100 @@
-🐾 <a href="https://snoopy-alpp.vercel.app/" class="text-blue-400 hover:underline">Snoopy Bank - Your Friendly Digital Banking App</a>  🐾
+# 🐾 Snoopy Bank - Your Friendly Digital Banking App 🐾
 
-Welcome to Snoopy Bank, a modern and secure banking application designed to provide a seamless financial management experience, all wrapped in a charming Snoopy theme! This application allows users to view account balances, make transfers, and track their transaction history with ease.
+<div align="center">
+  <img src="https://img.shields.io/badge/Live%20Demo-Visit%20App-blue?style=for-the-badge&logo=vercel" alt="Live Demo"/>
+  <img src="https://img.shields.io/badge/Status-Active-green?style=for-the-badge" alt="Status"/>
+  <img src="https://img.shields.io/badge/Version-1.0-orange?style=for-the-badge" alt="Version"/>
+</div>
 
-📸 Screenshots
+<div align="center">
+  <h3>🚀 <a href="https://snoopy-alpp.vercel.app/">Live Demo</a> </h3>
+</div>
 
-Here are some screenshots showcasing the application's interface and features:
+---
 
-A delightful Snoopy-themed login screen.
-![Captura de tela de 2025-07-03 16-25-38](https://github.com/user-attachments/assets/0870e80e-04a0-4723-8b01-c9c7f11207d1)
+## 🌟 About The Project
 
-Your account balances at a glance.
-![Captura de tela de 2025-07-03 16-21-10](https://github.com/user-attachments/assets/33fff302-9cf3-47f9-b623-205f259b12a5)
+Welcome to **Snoopy Bank**, a modern and secure banking application designed to provide a seamless financial management experience, all wrapped in a charming Snoopy theme! This application allows users to view account balances, make transfers, and track their transaction history with ease.
 
-Detailed view of your past transactions.
-![Captura de tela de 2025-07-03 16-21-25](https://github.com/user-attachments/assets/e703d6ec-4509-4601-ae95-8eb8a9a935f4)
+### 🏗️ Built With
 
-Make easy transfers with Dwolla integration.
-![Captura de tela de 2025-07-03 16-21-31](https://github.com/user-attachments/assets/f3742a68-e875-434e-9be4-a0dc4053c3dd)
+This project was built with powerful integrations:
 
-Engaging custom loading screens
-![Captura de tela de 2025-07-03 16-21-49](https://github.com/user-attachments/assets/a311a46e-63da-4f2c-acc7-fdddc85977af)
+- **🏦 Dwolla** - Enables secure money transfers between accounts
+- **🔗 Plaid** - Provides access to user's financial data and bank connections
+- **⚡ Appwrite** - Powers the entire database and authentication system
 
-✨ Features
+---
 
-Account Overview: Get a clear snapshot of your finances with real-time balances for all your linked accounts.
+## 📸 Application Screenshots
 
-Secure Transfers: Easily transfer funds between accounts or to other users.
+<details>
+<summary>Click to view all screenshots</summary>
 
-Detailed Transaction History: Keep track of your spending with a comprehensive log of all transactions.
+### 🔐 Authentication
+*A delightful Snoopy-themed login screen*
+![Login Screen](https://github.com/user-attachments/assets/0870e80e-04a0-4723-8b01-c9c7f11207d1)
 
-Robust User Authentication: Secure sign-up and login powered by Appwrite.
+### 💰 Dashboard
+*Your account balances at a glance*
+![Dashboard](https://github.com/user-attachments/assets/33fff302-9cf3-47f9-b623-205f259b12a5)
 
-Real-time Error Monitoring: Integrated with Sentry for session replays and comprehensive error logging, ensuring a stable and reliable user experience.
+### 📊 Transaction History
+*Detailed view of your past transactions*
+![Transactions](https://github.com/user-attachments/assets/e703d6ec-4509-4601-ae95-8eb8a9a935f4)
 
-Seamless Bank Integrations:
+### 💸 Money Transfers
+*Make easy transfers with Dwolla integration*
+![Transfers](https://github.com/user-attachments/assets/f3742a68-e875-434e-9be4-a0dc4053c3dd)
 
-Plaid: Connects securely to your bank accounts to fetch and display your transaction data.
+### ⏳ Loading Experience
+*Engaging custom loading screens*
+![Loading](https://github.com/user-attachments/assets/a311a46e-63da-4f2c-acc7-fdddc85977af)
 
-Dwolla: Facilitates secure and efficient money transfers.
+</details>
 
-Snoopy-Themed UI: Enjoy a delightful user interface styled with Tailwind CSS, featuring beloved Snoopy characters and motifs throughout the application.
+---
 
-Responsive Design: Optimized for a smooth experience across all devices, from mobile to desktop.
+## ✨ Key Features
 
-🚀 Technologies Used
-This project leverages a modern and robust tech stack:
+| Feature | Description |
+|---------|-------------|
+| 🏦 **Account Overview** | Get a clear snapshot of your finances with real-time balances for all linked accounts |
+| 🔄 **Secure Transfers** | Easily transfer funds between accounts or to other users |
+| 📈 **Transaction History** | Keep track of your spending with a comprehensive log of all transactions |
+| 🔐 **User Authentication** | Secure sign-up and login powered by Appwrite |
+| 🛡️ **Error Monitoring** | Integrated with Sentry for session replays and comprehensive error logging |
+| 🏪 **Bank Integrations** | Seamless connections via Plaid and Dwolla |
+| 🎨 **Snoopy-Themed UI** | Delightful interface with beloved Snoopy characters and motifs |
+| 📱 **Responsive Design** | Optimized experience across all devices |
 
-React
+---
 
-TypeScript
+## 🚀 Tech Stack
 
-Next.js
+<div align="center">
 
-Shadcn/ui
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Appwrite](https://img.shields.io/badge/Appwrite-F02E65?style=for-the-badge&logo=appwrite&logoColor=white)
 
-Tailwind CSS
+</div>
 
-Appwrite: An open-source backend server.
+### Core Technologies
+- **Frontend**: React, TypeScript, Next.js
+- **Styling**: Tailwind CSS, Shadcn/ui
+- **Backend**: Appwrite (open-source backend server)
+- **Monitoring**: Sentry (error monitoring and session replays)
+- **Financial APIs**: 
+  - Plaid (bank account connections and transaction data)
+  - Dwolla (payment processing and money transfers)
 
-Sentry: An error monitoring platform.
+---
 
-Plaid: A financial technology company that provides a platform for connecting bank accounts to applications, used here for transaction data retrieval.
+## 🏃‍♂️ Quick Start
 
-Dwolla: A payment platform that enables businesses to send and receive money, integrated for handling money transfers.
-
-
-💡 Usage
-
-Sign Up: Create a new account using the sign-up form.
-
-Log In: Access your dashboard using your registered credentials.
-
-Link Accounts: Use the Plaid integration to securely link your bank accounts. Use the credentials: user_good and pass_good to connect
-
-View Balances: See your account balances updated in real-time.
-
-Make Transfers: Utilize Dwolla to perform money transfers.
-
-Check History: Review your detailed transaction history.
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn package manager
