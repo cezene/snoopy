@@ -1,7 +1,9 @@
 🐾 Snoopy Bank - Your Friendly Digital Banking App 🐾
+
 Welcome to Snoopy Bank, a modern and secure banking application designed to provide a seamless financial management experience, all wrapped in a charming Snoopy theme! This application allows users to view account balances, make transfers, and track their transaction history with ease.
 
 ✨ Features
+
 Account Overview: Get a clear snapshot of your finances with real-time balances for all your linked accounts.
 
 Secure Transfers: Easily transfer funds between accounts or to other users.
@@ -52,6 +54,7 @@ Plaid: A financial technology company that provides a platform for connecting ba
 Dwolla: A payment platform that enables businesses to send and receive money, integrated for handling money transfers.
 
 📸 Screenshots
+
 Here are some screenshots showcasing the application's interface and features:
 
 A delightful Snoopy-themed login screen.
@@ -71,6 +74,7 @@ Engaging custom loading screens
 
 
 💡 Usage
+
 Sign Up: Create a new account using the sign-up form.
 
 Log In: Access your dashboard using your registered credentials.
@@ -84,4 +88,5 @@ Make Transfers: Utilize Dwolla to perform money transfers.
 Check History: Review your detailed transaction history.
 
 🤝 Contributing
+
 Contributions are welcome! If you have suggestions for improvements or find any bugs, please open an issue or submit a pull request.
