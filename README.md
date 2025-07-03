@@ -2,57 +2,6 @@
 
 Welcome to Snoopy Bank, a modern and secure banking application designed to provide a seamless financial management experience, all wrapped in a charming Snoopy theme! This application allows users to view account balances, make transfers, and track their transaction history with ease.
 
-✨ Features
-
-Account Overview: Get a clear snapshot of your finances with real-time balances for all your linked accounts.
-
-Secure Transfers: Easily transfer funds between accounts or to other users.
-
-Detailed Transaction History: Keep track of your spending with a comprehensive log of all transactions, including:
-
-Transaction Name: Clear descriptions for each entry.
-
-Value: The amount involved in each transaction.
-
-Date: Timestamp of when the transaction occurred.
-
-Channel: Identify if the transaction was Online or In-Store.
-
-Robust User Authentication: Secure sign-up and login powered by Appwrite.
-
-Real-time Error Monitoring: Integrated with Sentry for session replays and comprehensive error logging, ensuring a stable and reliable user experience.
-
-Seamless Bank Integrations:
-
-Plaid: Connects securely to your bank accounts to fetch and display your transaction data.
-
-Dwolla: Facilitates secure and efficient money transfers.
-
-Snoopy-Themed UI: Enjoy a delightful user interface styled with Tailwind CSS, featuring beloved Snoopy characters and motifs throughout the application.
-
-Responsive Design: Optimized for a smooth experience across all devices, from mobile to desktop.
-
-🚀 Technologies Used
-This project leverages a modern and robust tech stack:
-
-React: A declarative, component-based JavaScript library for building user interfaces.
-
-TypeScript: A superset of JavaScript that adds static types, enhancing code quality and maintainability.
-
-Next.js: A React framework for production, offering features like server-side rendering, static site generation, and API routes.
-
-Shadcn/ui: A collection of reusable components built with Radix UI and Tailwind CSS, providing beautiful and accessible UI primitives.
-
-Tailwind CSS: A utility-first CSS framework for rapidly building custom designs.
-
-Appwrite: An open-source backend server that provides authentication, databases, and file storage, used here for user authentication and database management.
-
-Sentry: An error monitoring platform that helps developers discover, triage, and prioritize errors in real-time.
-
-Plaid: A financial technology company that provides a platform for connecting bank accounts to applications, used here for transaction data retrieval.
-
-Dwolla: A payment platform that enables businesses to send and receive money, integrated for handling money transfers.
-
 📸 Screenshots
 
 Here are some screenshots showcasing the application's interface and features:
@@ -72,6 +21,49 @@ Make easy transfers with Dwolla integration.
 Engaging custom loading screens
 ![Captura de tela de 2025-07-03 16-21-49](https://github.com/user-attachments/assets/a311a46e-63da-4f2c-acc7-fdddc85977af)
 
+✨ Features
+
+Account Overview: Get a clear snapshot of your finances with real-time balances for all your linked accounts.
+
+Secure Transfers: Easily transfer funds between accounts or to other users.
+
+Detailed Transaction History: Keep track of your spending with a comprehensive log of all transactions.
+
+Robust User Authentication: Secure sign-up and login powered by Appwrite.
+
+Real-time Error Monitoring: Integrated with Sentry for session replays and comprehensive error logging, ensuring a stable and reliable user experience.
+
+Seamless Bank Integrations:
+
+Plaid: Connects securely to your bank accounts to fetch and display your transaction data.
+
+Dwolla: Facilitates secure and efficient money transfers.
+
+Snoopy-Themed UI: Enjoy a delightful user interface styled with Tailwind CSS, featuring beloved Snoopy characters and motifs throughout the application.
+
+Responsive Design: Optimized for a smooth experience across all devices, from mobile to desktop.
+
+🚀 Technologies Used
+This project leverages a modern and robust tech stack:
+
+React
+
+TypeScript
+
+Next.js
+
+Shadcn/ui
+
+Tailwind CSS
+
+Appwrite: An open-source backend server.
+
+Sentry: An error monitoring platform.
+
+Plaid: A financial technology company that provides a platform for connecting bank accounts to applications, used here for transaction data retrieval.
+
+Dwolla: A payment platform that enables businesses to send and receive money, integrated for handling money transfers.
+
 
 💡 Usage
 
@@ -86,7 +78,3 @@ View Balances: See your account balances updated in real-time.
 Make Transfers: Utilize Dwolla to perform money transfers.
 
 Check History: Review your detailed transaction history.
-
-🤝 Contributing
-
-Contributions are welcome! If you have suggestions for improvements or find any bugs, please open an issue or submit a pull request.
