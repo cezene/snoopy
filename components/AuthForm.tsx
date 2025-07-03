@@ -82,7 +82,7 @@ const AuthForm = ({ type }: { type: string }) => {
 
   return (
     <section className="auth-form">
-      <header className="flex flex-col gap-5 md:gap-8">
+      <header className="flex flex-col gap-5">
         <Link href="/" className="cursor-pointer flex items-center gap-1">
           <Image
             src={"/icons/snoopy-bank-logo.png"}
@@ -113,7 +113,7 @@ const AuthForm = ({ type }: { type: string }) => {
       ) : (
         <>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="!space-y-8">
+            <form onSubmit={form.handleSubmit(onSubmit)}>
               {!isSignIn && (
                 <div>
                   <div className="flex gap-4">
