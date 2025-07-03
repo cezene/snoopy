@@ -1,4 +1,4 @@
-🐾 Snoopy Bank - Your Friendly Digital Banking App 🐾
+🐾 <a href="https://snoopy-alpp.vercel.app/" class="text-blue-400 hover:underline">Snoopy Bank - Your Friendly Digital Banking App</a>  🐾
 
 Welcome to Snoopy Bank, a modern and secure banking application designed to provide a seamless financial management experience, all wrapped in a charming Snoopy theme! This application allows users to view account balances, make transfers, and track their transaction history with ease.
 
