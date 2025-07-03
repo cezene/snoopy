@@ -37,19 +37,46 @@ const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
     token,
     onSuccess,
   };
-  const { open } = usePlaidLink(config);
+  const { open, ready } = usePlaidLink(config);
   return (
     <>
-      <Button onClick={() => open()} className="plaidlink-default sidebar-link">
-        <Image
-          src="/icons/connect-bank.svg"
-          alt="Connect bank"
-          width={24}
-          height={24}
-          className="brightness-[3] invert-0"
-        />
-        <p className="text-[16px] font-semibold text-slate-50">Connect bank</p>
-      </Button>
+      {variant === "primary" ? (
+        <Button
+          className="plaidlink-primary"
+          onClick={() => open()}
+          disabled={!ready}
+        >
+          Connect bank
+        </Button>
+      ) : variant === "ghost" ? (
+        <Button
+          onClick={() => open()}
+          variant="ghost"
+          className="plaidlink-ghost"
+        >
+          <Image
+            src="/icons/connect-bank.svg"
+            alt="Connect bank"
+            width={24}
+            height={24}
+            className="brightness-[3] invert-0"
+          />
+          <p className=" hidden text-[16px] font-semibold text-slate-50 xl:block">
+            Connect bank
+          </p>
+        </Button>
+      ) : (
+        <Button onClick={() => open()} className="plaidlink-default sidebar-link">
+          <Image
+            src="/icons/connect-bank.svg"
+            alt="Connect bank"
+            width={24}
+            height={24}
+            className="brightness-[3] invert-0"
+          />
+          <p className="text-[16px] font-semibold text-slate-50">Connect bank</p>
+        </Button>
+      )}
     </>
   );
 };
