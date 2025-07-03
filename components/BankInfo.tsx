@@ -3,11 +3,7 @@
 import Image from "next/image";
 import { useSearchParams, useRouter } from "next/navigation";
 
-import {
-  formUrlQuery,
-  formatAmount,
-  getAccountTypeColors,
-} from "@/lib/utils";
+import { formUrlQuery, formatAmount, getAccountTypeColors } from "@/lib/utils";
 
 const BankInfo = ({ account, type }: BankInfoProps) => {
   const router = useRouter();

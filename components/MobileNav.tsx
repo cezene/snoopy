@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/sheet";
 import Footer from "./Footer";
 import PlaidLink from "./PlaidLink";
-import TestUserDialog from "./TestUserDialog";
 
 const MobileNav = ({ user }: MobileNavProps) => {
   const pathname = usePathname();
@@ -33,7 +32,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
         <SheetContent side="left" className="borber-none bg-zinc-950 !ml-3">
           <Link
             href="/"
-            className="cursor-pointer flex items-center !gap-1 !px-4"
+            className="cursor-pointer flex items-center !gap-4 !px-4 !py-4"
           >
             <Image
               src={"/icons/snoopy-bank-logo.png"}

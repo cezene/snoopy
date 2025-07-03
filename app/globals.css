@@ -368,16 +368,9 @@
   }
 
   /* PlaidLink */
-  .plaidlink-primary {
-    @apply text16 rounded-lg border border-amber-600 bg-orange-gradient font-semibold text-white shadow-form;
-  }
-
-  .plaidlink-ghost {
-    @apply flex cursor-pointer items-center justify-center !gap-3 rounded-lg !px-3 !py-7 hover:bg-white lg:justify-start;
-  }
 
   .plaidlink-default {
-    @apply flex !justify-start cursor-pointer !gap-3 rounded-lg !bg-transparent flex-row !pl-3;
+    @apply flex !justify-start cursor-pointer !gap-3 rounded-lg !bg-transparent flex-row !pl-4 md:!pl-3;
   }
 
   /* Auth */
@@ -467,7 +460,7 @@
   }
 
   .footer_image {
-    @apply relative size-5 max-xl:w-full max-xl:flex max-xl:justify-center max-xl:items-center;
+    @apply relative max-w-[50px] size-5 max-xl:w-full max-xl:flex max-xl:justify-center max-xl:items-center;
   }
 
   .footer_image-mobile {

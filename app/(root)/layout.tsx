@@ -18,7 +18,7 @@ export default async function RootLayout({
       <div className="flex size-full flex-col">
         <div className="root-layout">
           <Image
-            src={"/icons/snoopy-logo.png"}
+            src={"/icons/snoopy-bank-logo.png"}
             width={30}
             height={30}
             alt="Menu Icon"
