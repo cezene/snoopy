@@ -4,17 +4,14 @@ import Image from "next/image";
 import { useSearchParams, useRouter } from "next/navigation";
 
 import {
-  cn,
   formUrlQuery,
   formatAmount,
   getAccountTypeColors,
 } from "@/lib/utils";
 
-const BankInfo = ({ account, appwriteItemId, type }: BankInfoProps) => {
+const BankInfo = ({ account, type }: BankInfoProps) => {
   const router = useRouter();
   const searchParams = useSearchParams();
-
-  const isActive = appwriteItemId === account?.appwriteItemId;
 
   const handleBankChange = () => {
     const newUrl = formUrlQuery({

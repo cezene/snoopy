@@ -30,7 +30,7 @@ export const getUserInfo = async ({ userId }: getUserInfoProps) => {
     );
     return parseStringify(user.documents[0]);
   } catch (error) {
-    console.log("get Bank error");
+    console.log("get Bank error", error);
   }
 };
 
@@ -121,6 +121,7 @@ export const logoutAccount = async () => {
     (await cookies()).delete("appwrite-session");
     return account.deleteSession("current");
   } catch (error) {
+    console.log(error)
     return null;
   }
 };
