@@ -7,7 +7,7 @@
 </div>
 
 <div align="center">
-  <h3>🚀 <a href="https://snoopy-alpp.vercel.app/">Live Demo</a> </h3>
+  <h3>🚀 <a href="https://snoopy-alpp.vercel.app/">Live Demo</a> |📺 <a href="https://www.loom.com/share/8d19481ef4af4380b40e9c504600dee8?sid=437e2838-357c-4b79-9a3d-bfb0d3fb6b84">Usage Video</a>  </h3>
 </div>
 
 ---
@@ -92,9 +92,3 @@ This project was built with powerful integrations:
   - Dwolla (payment processing and money transfers)
 
 ---
-
-## 🏃‍♂️ Quick Start
-
-### Prerequisites
-- Node.js (v18 or higher)
-- npm or yarn package manager
