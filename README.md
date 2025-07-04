@@ -28,8 +28,8 @@ This project was built with powerful integrations:
 
 ## 📸 Application Screenshots
 
-<details>
-<summary>Click to view all screenshots</summary>
+
+Click to view all screenshots
 
 ### 🔐 Authentication
 *A delightful Snoopy-themed login screen*
@@ -51,7 +51,6 @@ This project was built with powerful integrations:
 *Engaging custom loading screens*
 ![Loading](https://github.com/user-attachments/assets/a311a46e-63da-4f2c-acc7-fdddc85977af)
 
-</details>
 
 ---
 
