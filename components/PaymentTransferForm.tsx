@@ -25,6 +25,16 @@ import {
 } from "./ui/form";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
+import Image from "next/image";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "./ui/alert-dialog";
 
 const formSchema = z.object({
   email: z.string().email("Invalid email address"),
@@ -37,6 +47,11 @@ const formSchema = z.object({
 const PaymentTransferForm = ({ accounts }: PaymentTransferFormProps) => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false);
+  const [transferData, setTransferData] = useState<{
+    amount: string;
+    recipientEmail: string;
+  } | null>(null);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -82,8 +97,14 @@ const PaymentTransferForm = ({ accounts }: PaymentTransferFormProps) => {
         const newTransaction = await createTransaction(transaction);
 
         if (newTransaction) {
+          setTransferData({
+            amount: data.amount,
+            recipientEmail: data.email,
+          });
+
+          setShowSuccessDialog(true);
+
           form.reset();
-          router.push("/");
         }
       }
     } catch (error) {
@@ -93,163 +114,231 @@ const PaymentTransferForm = ({ accounts }: PaymentTransferFormProps) => {
     setIsLoading(false);
   };
 
+  const handleSuccessClose = () => {
+    setShowSuccessDialog(false);
+    setTransferData(null);
+    router.push("/");
+  };
+
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(submit)} className="flex flex-col">
-        <FormField
-          control={form.control}
-          name="senderBank"
-          render={() => (
-            <FormItem className="border-t border-slate-50">
-              <div className="payment-transfer_form-item !pb-6 !pt-5">
-                <div className="payment-transfer_form-content">
-                  <FormLabel className="text-14 font-medium text-slate-50">
-                    Select Source Bank
-                  </FormLabel>
-                  <FormDescription className="text-12 font-normal text-slate-50">
-                    Select the bank account you want to transfer funds from
-                  </FormDescription>
+    <>
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(submit)} className="flex flex-col">
+          <FormField
+            control={form.control}
+            name="senderBank"
+            render={() => (
+              <FormItem className="border-t border-slate-50">
+                <div className="payment-transfer_form-item !pb-6 !pt-5">
+                  <div className="payment-transfer_form-content">
+                    <FormLabel className="text-14 font-medium text-slate-50">
+                      Select Source Bank
+                    </FormLabel>
+                    <FormDescription className="text-12 font-normal text-slate-50">
+                      Select the bank account you want to transfer funds from
+                    </FormDescription>
+                  </div>
+                  <div className="flex w-full flex-col">
+                    <FormControl>
+                      <BankDropdown
+                        accounts={accounts}
+                        setValue={form.setValue}
+                        otherStyles="!w-full"
+                        senderBank={form.getValues().senderBank}
+                      />
+                    </FormControl>
+                    <FormMessage className="text-12 text-red-300" />
+                  </div>
                 </div>
-                <div className="flex w-full flex-col">
-                  <FormControl>
-                    <BankDropdown
-                      accounts={accounts}
-                      setValue={form.setValue}
-                      otherStyles="!w-full"
-                      senderBank={form.getValues().senderBank}
-                    />
-                  </FormControl>
-                  <FormMessage className="text-12 text-red-300" />
-                </div>
-              </div>
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem className="border-t border-slate-50">
-              <div className="payment-transfer_form-item !pb-6 !pt-5">
-                <div className="payment-transfer_form-content">
-                  <FormLabel className="text14 font-medium text-slate-50">
-                    Transfer Note (Optional)
-                  </FormLabel>
-                  <FormDescription className="text-12 font-normal text-slate-50">
-                    Please provide any additional information or instructions
-                    related to the transfer
-                  </FormDescription>
-                </div>
-                <div className="flex w-full flex-col">
-                  <FormControl>
-                    <Textarea
-                      placeholder="Write a short note here"
-                      className="input-class"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage className="text12 text-red-500" />
-                </div>
-              </div>
-            </FormItem>
-          )}
-        />
-
-        <div className="payment-transfer_form-details">
-          <h2 className="text18 font-semibold text-slate-50">
-            Bank account details
-          </h2>
-          <p className="text16 font-normal text-slate-50">
-            Enter the bank account details of the recipient
-          </p>
-        </div>
-
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem className="border-t border-slate-50">
-              <div className="payment-transfer_form-item !py-5">
-                <FormLabel className="text14 w-full max-w-[280px] font-medium text-slate-50">
-                  Recipient&apos;s Email Address
-                </FormLabel>
-                <div className="flex w-full flex-col">
-                  <FormControl>
-                    <Input
-                      placeholder="ex: johndoe@gmail.com"
-                      className="input-class"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage className="text12 text-red-500" />
-                </div>
-              </div>
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="shareableId"
-          render={({ field }) => (
-            <FormItem className="border-t border-slate-50">
-              <div className="payment-transfer_form-item !pb-5 !pt-6">
-                <FormLabel className="text-14 w-full max-w-[280px] font-medium text-slate-50">
-                  Receiver&apos;s Plaid Shareable Id
-                </FormLabel>
-                <div className="flex w-full flex-col">
-                  <FormControl>
-                    <Input
-                      placeholder="Enter the public account number"
-                      className="input-class"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage className="text12 text-red-500" />
-                </div>
-              </div>
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="amount"
-          render={({ field }) => (
-            <FormItem className="border-y border-slate-50">
-              <div className="payment-transfer_form-item !py-5">
-                <FormLabel className="text14 w-full max-w-[280px] font-medium text-slate-50">
-                  Amount
-                </FormLabel>
-                <div className="flex w-full flex-col">
-                  <FormControl>
-                    <Input
-                      placeholder="ex: 5.00"
-                      className="input-class"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage className="text12 text-red-400" />
-                </div>
-              </div>
-            </FormItem>
-          )}
-        />
-
-        <div className="payment-transfer_btn-box">
-          <Button type="submit" className="payment-transfer_btn">
-            {isLoading ? (
-              <>
-                <Loader2 size={20} className="animate-spin" /> &nbsp; Sending...
-              </>
-            ) : (
-              "Transfer Funds"
+              </FormItem>
             )}
-          </Button>
-        </div>
-      </form>
-    </Form>
+          />
+
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem className="border-t border-slate-50">
+                <div className="payment-transfer_form-item !pb-6 !pt-5">
+                  <div className="payment-transfer_form-content">
+                    <FormLabel className="text14 font-medium text-slate-50">
+                      Transfer Note (Optional)
+                    </FormLabel>
+                    <FormDescription className="text-12 font-normal text-slate-50">
+                      Please provide any additional information or instructions
+                      related to the transfer
+                    </FormDescription>
+                  </div>
+                  <div className="flex w-full flex-col">
+                    <FormControl>
+                      <Textarea
+                        placeholder="Write a short note here"
+                        className="input-class"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage className="text12 text-red-500" />
+                  </div>
+                </div>
+              </FormItem>
+            )}
+          />
+
+          <div className="payment-transfer_form-details">
+            <h2 className="text18 font-semibold text-slate-50">
+              Bank account details
+            </h2>
+            <p className="text16 font-normal text-slate-50">
+              Enter the bank account details of the recipient
+            </p>
+          </div>
+
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem className="border-t border-slate-50">
+                <div className="payment-transfer_form-item !py-5">
+                  <FormLabel className="text14 w-full max-w-[280px] font-medium text-slate-50">
+                    Recipient&apos;s Email Address
+                  </FormLabel>
+                  <div className="flex w-full flex-col">
+                    <FormControl>
+                      <Input
+                        placeholder="ex: johndoe@gmail.com"
+                        className="input-class"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage className="text12 text-red-500" />
+                  </div>
+                </div>
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="shareableId"
+            render={({ field }) => (
+              <FormItem className="border-t border-slate-50">
+                <div className="payment-transfer_form-item !pb-5 !pt-6">
+                  <FormLabel className="text-14 w-full max-w-[280px] font-medium text-slate-50">
+                    Receiver&apos;s Plaid Shareable Id
+                  </FormLabel>
+                  <div className="flex w-full flex-col">
+                    <FormControl>
+                      <Input
+                        placeholder="Enter the public account number"
+                        className="input-class"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage className="text12 text-red-500" />
+                  </div>
+                </div>
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="amount"
+            render={({ field }) => (
+              <FormItem className="border-y border-slate-50">
+                <div className="payment-transfer_form-item !py-5">
+                  <FormLabel className="text14 w-full max-w-[280px] font-medium text-slate-50">
+                    Amount
+                  </FormLabel>
+                  <div className="flex w-full flex-col">
+                    <FormControl>
+                      <Input
+                        placeholder="ex: 5.00"
+                        className="input-class"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage className="text12 text-red-400" />
+                  </div>
+                </div>
+              </FormItem>
+            )}
+          />
+
+          <div className="payment-transfer_btn-box">
+            <Button type="submit" className="payment-transfer_btn">
+              {isLoading ? (
+                <>
+                  <Loader2 size={20} className="animate-spin" /> &nbsp;
+                  Sending...
+                </>
+              ) : (
+                "Transfer Funds"
+              )}
+            </Button>
+          </div>
+        </form>
+      </Form>
+
+      <AlertDialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
+        <AlertDialogContent className="bg-stone-900 border border-yellow-300 max-w-lg !mx-auto">
+          <AlertDialogHeader className="text-center !space-y-4">
+            <AlertDialogTitle className="flex items-center justify-center !gap-3 text-green-600 text-xl font-semibold !mt-2">
+              <svg
+                className="h-8 w-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              Transfer Successful!
+            </AlertDialogTitle>
+
+            <div className="flex flex-col items-center !space-y-4">
+              <Image
+                src="/icons/snoopy-transfer-image.png"
+                className="rounded-xl"
+                alt="Snoopy Sucessful transfer Image"
+                width={280}
+                height={280}
+              />
+
+              <AlertDialogDescription className="text-slate-50 text-center text-base leading-relaxed !space-y-2 !py-4 max-w-[380px]">
+                <p className="text-lg">
+                  Woof! Your transfer of{" "}
+                  <span className="font-semibold text-green-400">
+                    ${transferData?.amount}
+                  </span>{" "}
+                  to{" "}
+                  <span className="font-semibold text-orange-400">
+                    {transferData?.recipientEmail}
+                  </span>{" "}
+                  has been sent at lightning speed!
+                </p>
+                <p className="text-sm text-slate-300 !mt-3">
+                  The recipient will get a bark about this.
+                </p>
+              </AlertDialogDescription>
+            </div>
+          </AlertDialogHeader>
+
+          <AlertDialogFooter className="flex justify-center !px-6 !py-4 w-full">
+            <AlertDialogAction
+              onClick={handleSuccessClose}
+              className="bg-orange-400 hover:bg-amber-400 w-full text-lg font-medium"
+            >
+              Keep wagging
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+    </>
   );
 };
 
