@@ -7,7 +7,7 @@
 </div>
 
 <div align="center">
-  <h3>🚀 <a href="https://snoopy-alpp.vercel.app/">Live Demo</a> |📺 <a href="https://www.canva.com/design/DAGsO2wBVxY/H1J-AABKEYQuOYL8iB6paw/watch?utm_content=DAGsO2wBVxY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3932d90f28">Usage Video</a>  </h3>
+  <h3>🚀 <a href="https://snoopy-alpp.vercel.app/">Live Demo</a> |📺 <a href="https://www.youtube.com/watch?v=Jibw9SJ4u6E">Usage Video</a>  </h3>
 </div>
 
 ---
